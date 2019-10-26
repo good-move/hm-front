@@ -14,8 +14,22 @@ export default class MemesApi {
     }
 
     nextMeme(userId) {
-        return handler.post(`${prefix}/generate`, {
+        return handler.post(`${prefix}/next`, {
             userId: userId
+        })
+    }
+
+    generateMeme(subjectId, caption) {
+        return handler.post(`${prefix}/generate`, {
+            subjectId: subjectId,
+            caption: caption
+        });
+    }
+
+    validateGeneratedImage(imageId, decision) {
+        return handler.post(`${prefix}/validate`, {
+            id: imageId,
+            decision: decision
         })
     }
 
