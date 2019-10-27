@@ -23,11 +23,11 @@ export default class Create extends React.Component {
         super(props);
 
         this.state = {
-            route: null,
             subjects: [],
             currentSubject: null,
             creating: false,
             generatedImage: null,
+            summary: "",
         };
 
         this.switchRoute = this.switchRoute.bind(this);
@@ -73,7 +73,7 @@ export default class Create extends React.Component {
                         creating: false,
                         generatedImage: data.payload.image,
                         currentSubject: null,
-                        summary: null,
+                        summary: "",
                     });
                 })
                 .catch(err => {

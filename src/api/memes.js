@@ -5,11 +5,11 @@ const prefix = "/memes";
 export default class MemesApi {
 
     answer(memeId, userId, feedbackValue, answerValue) {
-        return handler.post(`${prefix}/answer`, {
+        return handler.post(`answers`, {
             userId: userId,
             memeId: memeId,
             feedback: answerValue,
-            answer: answerValue,
+            result: answerValue,
         })
     }
 
