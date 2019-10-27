@@ -13,9 +13,10 @@ export default class MemesApi {
         })
     }
 
-    nextMeme(userId) {
+    nextMeme(userId, subjectId) {
         return handler.post(`${prefix}/next`, {
-            userId: userId
+            userId: userId,
+            subjectId: subjectId
         })
     }
 
