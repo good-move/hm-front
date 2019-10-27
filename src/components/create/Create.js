@@ -129,7 +129,9 @@ export default class Create extends React.Component {
                 </Select>
                 <TextField onChange={this.onSummaryChanged} value={summary} variant={'outlined'} label={'Caption'}/>
 
-                <Button onClick={this.generateMeme}>Generate</Button>
+                <div>
+                    <Button onClick={this.generateMeme}>Generate</Button>
+                </div>
             </div>
         );
 
@@ -139,8 +141,8 @@ export default class Create extends React.Component {
 
         if (generatedImage) {
             body = (
-                <div>
-                    <h4>Generated image</h4>
+                <div className={styles.contentWrapper} style={{'textAlign': 'center'}}>
+                    <h4 style={{'marginTop':'24px'}}>Meme generated: both funny and educational. Students are gonna love it</h4>
                     <img src={generatedImage.url} className={styles.generatedImg}/>
 
                     <Button onClick={() => this.onApproveImage(generatedImage.id)}>Accept</Button>
